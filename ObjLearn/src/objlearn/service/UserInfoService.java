@@ -5,6 +5,7 @@
  */
 package objlearn.service;
 
+import java.util.List;
 import objlearn.dao.UserInfoDao;
 import objlearn.dto.UserInfoDto;
 import objlearn.entity.UserInfoEntity;
@@ -14,6 +15,8 @@ import objlearn.entity.UserInfoEntity;
  * @author WU HAORAN
  */
 public class UserInfoService {
+
+    UserInfoDao userInfoDao = new UserInfoDao();
 
     public void createUserInfo(UserInfoDto userInfoDto) {
 
@@ -26,8 +29,16 @@ public class UserInfoService {
         entity.setUserId(userInfoDto.getUserId());
         entity.setAge(userInfoDto.getAge());
 
-        UserInfoDao userInfoDao = new UserInfoDao();
         userInfoDao.createUserInfo(entity);
+
+    }
+
+    public void selectAll() {
+
+        List<UserInfoEntity> list = userInfoDao.selectUserInfo();
+        for (UserInfoEntity e : list) {
+            System.out.println(e.getName() + ":" + e.getUserId() + ":" + e.getAge());
+        }
 
     }
 
