@@ -5,6 +5,7 @@
  */
 package objlearn.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import objlearn.dao.UserInfoDao;
 import objlearn.dto.UserInfoDto;
@@ -18,6 +19,11 @@ public class UserInfoService {
 
     UserInfoDao userInfoDao = new UserInfoDao();
 
+    /**
+     * ユーザー作成
+     *
+     * @param userInfoDto
+     */
     public void createUserInfo(UserInfoDto userInfoDto) {
 
         System.out.println(userInfoDto.getName());
@@ -33,12 +39,24 @@ public class UserInfoService {
 
     }
 
-    public void selectAll() {
+    /**
+     * 全件検索
+     */
+    public List<UserInfoDto> selectAll() {
 
         List<UserInfoEntity> list = userInfoDao.selectUserInfo();
+
+        List<UserInfoDto> dto = new ArrayList<>();
+
         for (UserInfoEntity e : list) {
-            System.out.println(e.getName() + ":" + e.getUserId() + ":" + e.getAge());
+            UserInfoDto d = new UserInfoDto();
+            d.setName(e.getName());
+            d.setUserId(e.getUserId());
+            d.setAge(e.getAge());
+            dto.add(d);
         }
+
+        return dto;
 
     }
 

@@ -17,7 +17,6 @@ public class UserInfoDto {
     
     private int age;
     
-
     public String getName() {
         return name;
     }
