@@ -14,14 +14,14 @@ import objlearn.service.UserInfoService;
  *
  * @author WU HAORAN
  */
-public class UserInfoPage extends javax.swing.JFrame {
+public class UserInfoController extends javax.swing.JFrame {
 
     UserInfoService userInfoService = new UserInfoService();
 
     /**
      * Creates new form UserInfoPage
      */
-    public UserInfoPage() {
+    public UserInfoController() {
         initComponents();
         userInfoList();
     }
@@ -201,20 +201,21 @@ public class UserInfoPage extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserInfoPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserInfoController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserInfoPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserInfoController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserInfoPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserInfoController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserInfoPage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserInfoController.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new UserInfoPage().setVisible(true);
+                new UserInfoController().setVisible(true);
             }
         });
     }
