@@ -158,12 +158,18 @@ public class UserInfoPage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    /**
+     検索
+    */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
         userInfoList();
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    /**
+     * 初期化
+     */
     private void userInfoList() {
 
         List<UserInfoDto> dto = userInfoService.selectAll();
